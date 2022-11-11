@@ -1,0 +1,724 @@
+
+<!DOCTYPE html>
+<html lang="ko" class="">
+                                                                <head>
+                
+                
+                        <!-- BusinessLicenseInfo - START -->
+        
+            <link href="https://tistory1.daumcdn.net/tistory_admin/userblog/userblog-7ceb32d78c3e1d773e0eeb855d3f1b4a5882f3e8/static/plugin/BusinessLicenseInfo/style.css" rel="stylesheet" type="text/css"/>
+
+            <script>function switchFold(entryId) {
+    var businessLayer = document.getElementById("businessInfoLayer_" + entryId);
+
+    if (businessLayer) {
+        if (businessLayer.className.indexOf("unfold_license") > 0) {
+            businessLayer.className = "business_license_layer";
+        } else {
+            businessLayer.className = "business_license_layer unfold_license";
+        }
+    }
+}
+</script>
+
+        
+        <!-- BusinessLicenseInfo - END -->
+        <!-- DaumShow - START -->
+        <style type="text/css">#daumSearchBox {
+    height: 21px;
+    background-image: url(//i1.daumcdn.net/imgsrc.search/search_all/show/tistory/plugin/bg_search2_2.gif);
+    margin: 5px auto;
+    padding: 0;
+}
+
+#daumSearchBox input {
+    background: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+#daumSearchBox #daumLogo {
+    width: 34px;
+    height: 21px;
+    float: left;
+    margin-right: 5px;
+    background-image: url(//i1.daumcdn.net/img-media/tistory/img/bg_search1_2_2010ci.gif);
+}
+
+#daumSearchBox #show_q {
+    background-color: transparent;
+    border: none;
+    font: 12px Gulim, Sans-serif;
+    color: #555;
+    margin-top: 4px;
+    margin-right: 15px;
+    float: left;
+}
+
+#daumSearchBox #show_btn {
+    background-image: url(//i1.daumcdn.net/imgsrc.search/search_all/show/tistory/plugin/bt_search_2.gif);
+    width: 37px;
+    height: 21px;
+    float: left;
+    margin: 0;
+    cursor: pointer;
+    text-indent: -1000em;
+}
+</style>
+
+        <!-- DaumShow - END -->
+
+<!-- Revenue - START -->
+
+<!-- Revenue - END -->
+
+        <!-- TistoryProfileLayer - START -->
+        <link href="https://tistory1.daumcdn.net/tistory_admin/userblog/userblog-7ceb32d78c3e1d773e0eeb855d3f1b4a5882f3e8/static/plugin/TistoryProfileLayer/style.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="https://tistory1.daumcdn.net/tistory_admin/userblog/userblog-7ceb32d78c3e1d773e0eeb855d3f1b4a5882f3e8/static/plugin/TistoryProfileLayer/script.js"></script>
+
+        <!-- TistoryProfileLayer - END -->
+
+                
+                <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="format-detection" content="telephone=no">
+<script src="//t1.daumcdn.net/tistory_admin/lib/jquery/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script src="//t1.daumcdn.net/tistory_admin/lib/lightbox/js/lightbox-v2.10.0.min.js" defer></script>
+<script type="text/javascript" src="//t1.daumcdn.net/tiara/js/v1/tiara.min.js"></script><meta name="referrer" content="always"/>
+<meta name="google-adsense-platform-account" content="ca-host-pub-9691043933427338"/>
+<meta name="google-adsense-platform-domain" content="tistory.com"/>
+<meta name="description" content="이번 시간에는 카메라 연동에 대해서 배워보자 늘 해왔던 것처럼 아래와 같이 레이아웃을 기본 세팅을 해주었다. 그 다음 자바 파일 수정을 해주었다.이번 수업시간에는 코드를 일단 다 치고 설명하는 방식으로 진행하겠다고 하셨다. 여기까지 코딩해주고, 카메라 권한 허용 작업을 위해 manifest 도 다음의 권한 허용 코드 3줄도 추가를 해주었다. 그 다음 Gradle Script의 build.gradle 을 열어준다. implementation 'gun0912.ted:tedpermission:2.0.0' 를 한 줄 쳐주고 우측 상단의 sync now를 클릭해서 다운로드를 받는다. sync한 거를 활용하기 위해 다시 메인 엑티비티로 가서 다음과 같이 입력해주었다.//권한체크 TedPermission.with(g.."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://zzimo.tistory.com/84"/>
+<meta property="og.article.author" content="찌딴"/>
+<meta property="og:site_name" content="찌모"/>
+<meta property="og:title" content="#11 안드로이드 앱만들기/카메라"/>
+<meta name="by" content="찌딴"/>
+<meta property="og:description" content="이번 시간에는 카메라 연동에 대해서 배워보자 늘 해왔던 것처럼 아래와 같이 레이아웃을 기본 세팅을 해주었다. 그 다음 자바 파일 수정을 해주었다.이번 수업시간에는 코드를 일단 다 치고 설명하는 방식으로 진행하겠다고 하셨다. 여기까지 코딩해주고, 카메라 권한 허용 작업을 위해 manifest 도 다음의 권한 허용 코드 3줄도 추가를 해주었다. 그 다음 Gradle Script의 build.gradle 을 열어준다. implementation 'gun0912.ted:tedpermission:2.0.0' 를 한 줄 쳐주고 우측 상단의 sync now를 클릭해서 다운로드를 받는다. sync한 거를 활용하기 위해 다시 메인 엑티비티로 가서 다음과 같이 입력해주었다.//권한체크 TedPermission.with(g.."/>
+<meta property="og:image" content="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FbrzkDR%2FbtqGC7sqG1d%2FIpcHb8ZsvvQele3C039VFk%2Fimg.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@TISTORY"/>
+<meta name="twitter:title" content="#11 안드로이드 앱만들기/카메라"/>
+<meta name="twitter:description" content="이번 시간에는 카메라 연동에 대해서 배워보자 늘 해왔던 것처럼 아래와 같이 레이아웃을 기본 세팅을 해주었다. 그 다음 자바 파일 수정을 해주었다.이번 수업시간에는 코드를 일단 다 치고 설명하는 방식으로 진행하겠다고 하셨다. 여기까지 코딩해주고, 카메라 권한 허용 작업을 위해 manifest 도 다음의 권한 허용 코드 3줄도 추가를 해주었다. 그 다음 Gradle Script의 build.gradle 을 열어준다. implementation 'gun0912.ted:tedpermission:2.0.0' 를 한 줄 쳐주고 우측 상단의 sync now를 클릭해서 다운로드를 받는다. sync한 거를 활용하기 위해 다시 메인 엑티비티로 가서 다음과 같이 입력해주었다.//권한체크 TedPermission.with(g.."/>
+<meta property="twitter:image" content="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FbrzkDR%2FbtqGC7sqG1d%2FIpcHb8ZsvvQele3C039VFk%2Fimg.png"/>
+<meta content="https://zzimo.tistory.com/84" property="dg:plink" content="https://zzimo.tistory.com/84"/>
+<meta name="plink"/>
+<meta name="title" content="#11 안드로이드 앱만들기/카메라"/>
+<meta name="article:media_name" content="찌모"/>
+<meta property="article:mobile_url" content="https://zzimo.tistory.com/m/84"/>
+<meta property="article:pc_url" content="https://zzimo.tistory.com/84"/>
+<meta property="article:mobile_view_url" content="https://zzimo.tistory.com/m/84"/>
+<meta property="article:pc_view_url" content="https://zzimo.tistory.com/84"/>
+<meta property="article:talk_channel_view_url" content="https://zzimo.tistory.com/m/84"/>
+<meta property="article:pc_service_home" content="https://www.tistory.com"/>
+<meta property="article:mobile_service_home" content="https://www.tistory.com/m"/>
+<meta property="article:txid" content="3193210_84"/>
+<meta property="article:published_time" content="2020-08-18T00:37:55+09:00"/>
+<meta property="og:regDate" content="20200818123755"/>
+<meta property="article:modified_time" content="2020-08-27T18:01:58+09:00"/>
+<link rel="stylesheet" type="text/css" href="https://t1.daumcdn.net/tistory_admin/lib/lightbox/css/lightbox.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://tistory1.daumcdn.net/tistory_admin/userblog/userblog-7ceb32d78c3e1d773e0eeb855d3f1b4a5882f3e8/static/style/font.css"/>
+<link rel="stylesheet" type="text/css" href="https://tistory1.daumcdn.net/tistory_admin/userblog/userblog-7ceb32d78c3e1d773e0eeb855d3f1b4a5882f3e8/static/style/content.css"/>
+<script type="text/javascript">(function() {
+    var tjQuery = jQuery.noConflict(true);
+    window.tjQuery = tjQuery;
+    window.orgjQuery = window.jQuery; window.jQuery = tjQuery;
+    window.jQuery = window.orgjQuery; delete window.orgjQuery;
+})()</script>
+<script type="text/javascript" src="https://tistory1.daumcdn.net/tistory_admin/userblog/userblog-7ceb32d78c3e1d773e0eeb855d3f1b4a5882f3e8/static/script/base.js"></script>
+<script type="text/javascript">if (!window.T) { window.T = {} }
+window.T.config = {"TOP_SSL_URL":"https://www.tistory.com","PREVIEW":false,"ROLE":"guest","PREV_PAGE":"","NEXT_PAGE":"","BLOG":{"id":3193210,"name":"zzimo","title":"찌모","isDormancy":true},"NEED_COMMENT_LOGIN":false,"COMMENT_LOGIN_CONFIRM_MESSAGE":"","LOGIN_URL":"https://www.tistory.com/auth/login/?redirectUrl=https%3A%2F%2Fzzimo.tistory.com%2F84","DEFAULT_URL":"https://zzimo.tistory.com","USER":{"name":null,"homepage":null},"SUBSCRIPTION":{"status":"none","isConnected":false,"isPending":false,"isWait":false,"isProcessing":false,"isNone":true},"IS_LOGIN":false,"HAS_BLOG":false,"TOP_URL":"http://www.tistory.com","JOIN_URL":"https://www.tistory.com/member/join","ROLE_GROUP":"visitor"};
+window.appInfo = {"domain":"tistory.com","topUrl":"https://www.tistory.com","loginUrl":"https://www.tistory.com/auth/login","logoutUrl":"https://www.tistory.com/auth/logout"};
+window.initData = {};
+
+window.TistoryBlog = {
+    basePath: "",
+    url: "https://zzimo.tistory.com",
+    tistoryUrl: "https://zzimo.tistory.com",
+    manageUrl: "https://zzimo.tistory.com/manage",
+    token: "U6ukBf3vQlyTqnmFn3i6KgV4qkrX/KW7HPZmOJD1C5vIp69etxCcQ2dqYiVkJjpt"
+};
+var servicePath = "";
+var blogURL = "";</script>
+<script type="text/javascript" src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+
+                
+	<title>#11 안드로이드 앱만들기/카메라 :: 찌모</title>
+<meta name="title" content="#11 안드로이드 앱만들기/카메라 :: 찌모" />
+<meta name="description" Content="" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+
+<link rel="alternate" type="application/rss+xml" title="찌모" href="https://zzimo.tistory.com/rss" />
+<link rel="shortcut icon" href="https://zzimo.tistory.com/favicon.ico" />
+
+<link rel="stylesheet" href="https://tistory1.daumcdn.net/tistory/0/Square/style.css?_version_=1563972051" />
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css">
+<!--[if IE 7]>
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome-ie7.min.css">
+<![endif]-->
+<link href="https://tistory1.daumcdn.net/tistory/0/Square/images/jquery.mCustomScrollbar.min.css?_version_=1563972051" rel="stylesheet">
+
+<script>
+//추가 단축키
+var key = new Array();
+key['w'] = "/admin/entry/post/";
+key['e'] = "/admin/skin/edit/";
+key['r'] = "/admin/plugin/refererUrlLog/";
+key['h'] = "/";
+
+function getKey(keyStroke) {
+	if ((event.srcElement.tagName != 'INPUT') && (event.srcElement.tagName != 'TEXTAREA')){
+		isNetscape=(document.layers);
+		eventChooser = (isNetscape) ? keyStroke.which : event.keyCode;
+		which = String.fromCharCode(eventChooser).toLowerCase();
+		for (var i in key)
+			if (which == i) window.location = key[i];
+	}
+}
+document.onkeypress = getKey;
+</script>
+
+                
+                
+                <style type="text/css">.another_category {
+    border: 1px solid #E5E5E5;
+    padding: 10px 10px 5px;
+    margin: 10px 0;
+    clear: both;
+}
+
+.another_category h4 {
+    font-size: 12px !important;
+    margin: 0 !important;
+    border-bottom: 1px solid #E5E5E5 !important;
+    padding: 2px 0 6px !important;
+}
+
+.another_category h4 a {
+    font-weight: bold !important;
+}
+
+.another_category table {
+    table-layout: fixed;
+    border-collapse: collapse;
+    width: 100% !important;
+    margin-top: 10px !important;
+}
+
+* html .another_category table {
+    width: auto !important;
+}
+
+*:first-child + html .another_category table {
+    width: auto !important;
+}
+
+.another_category th, .another_category td {
+    padding: 0 0 4px !important;
+}
+
+.another_category th {
+    text-align: left;
+    font-size: 12px !important;
+    font-weight: normal;
+    word-break: break-all;
+    overflow: hidden;
+    line-height: 1.5;
+}
+
+.another_category td {
+    text-align: right;
+    width: 80px;
+    font-size: 11px;
+}
+
+.another_category th a {
+    font-weight: normal;
+    text-decoration: none;
+    border: none !important;
+}
+
+.another_category th a.current {
+    font-weight: bold;
+    text-decoration: none !important;
+    border-bottom: 1px solid !important;
+}
+
+.another_category th span {
+    font-weight: normal;
+    text-decoration: none;
+    font: 10px Tahoma, Sans-serif;
+    border: none !important;
+}
+
+.another_category_color_gray, .another_category_color_gray h4 {
+    border-color: #E5E5E5 !important;
+}
+
+.another_category_color_gray * {
+    color: #909090 !important;
+}
+
+.another_category_color_gray th a.current {
+    border-color: #909090 !important;
+}
+
+.another_category_color_gray h4, .another_category_color_gray h4 a {
+    color: #737373 !important;
+}
+
+.another_category_color_red, .another_category_color_red h4 {
+    border-color: #F6D4D3 !important;
+}
+
+.another_category_color_red * {
+    color: #E86869 !important;
+}
+
+.another_category_color_red th a.current {
+    border-color: #E86869 !important;
+}
+
+.another_category_color_red h4, .another_category_color_red h4 a {
+    color: #ED0908 !important;
+}
+
+.another_category_color_green, .another_category_color_green h4 {
+    border-color: #CCE7C8 !important;
+}
+
+.another_category_color_green * {
+    color: #64C05B !important;
+}
+
+.another_category_color_green th a.current {
+    border-color: #64C05B !important;
+}
+
+.another_category_color_green h4, .another_category_color_green h4 a {
+    color: #3EA731 !important;
+}
+
+.another_category_color_blue, .another_category_color_blue h4 {
+    border-color: #C8DAF2 !important;
+}
+
+.another_category_color_blue * {
+    color: #477FD6 !important;
+}
+
+.another_category_color_blue th a.current {
+    border-color: #477FD6 !important;
+}
+
+.another_category_color_blue h4, .another_category_color_blue h4 a {
+    color: #1960CA !important;
+}
+
+.another_category_color_violet, .another_category_color_violet h4 {
+    border-color: #E1CEEC !important;
+}
+
+.another_category_color_violet * {
+    color: #9D64C5 !important;
+}
+
+.another_category_color_violet th a.current {
+    border-color: #9D64C5 !important;
+}
+
+.another_category_color_violet h4, .another_category_color_violet h4 a {
+    color: #7E2CB5 !important;
+}
+</style>
+
+                
+                <link rel="stylesheet" type="text/css" href="https://tistory1.daumcdn.net/tistory_admin/userblog/userblog-7ceb32d78c3e1d773e0eeb855d3f1b4a5882f3e8/static/style/dialog.css"/>
+<link rel="stylesheet" type="text/css" href="//t1.daumcdn.net/tistory_admin/www/style/top/font.css"/>
+<link rel="stylesheet" type="text/css" href="https://tistory1.daumcdn.net/tistory_admin/userblog/userblog-7ceb32d78c3e1d773e0eeb855d3f1b4a5882f3e8/static/style/postBtn.css"/>
+<link rel="stylesheet" type="text/css" href="https://tistory1.daumcdn.net/tistory_admin/userblog/userblog-7ceb32d78c3e1d773e0eeb855d3f1b4a5882f3e8/static/style/tistory.css"/>
+<link rel="canonical" href="https://zzimo.tistory.com/84"/>
+
+<!-- BEGIN STRUCTURED_DATA -->
+<script type="application/ld+json">
+    {"@context":"http://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@id":"https://zzimo.tistory.com/84","name":null},"url":"https://zzimo.tistory.com/84","headline":"#11 안드로이드 앱만들기/카메라","description":"이번 시간에는 카메라 연동에 대해서 배워보자 늘 해왔던 것처럼 아래와 같이 레이아웃을 기본 세팅을 해주었다. 그 다음 자바 파일 수정을 해주었다.이번 수업시간에는 코드를 일단 다 치고 설명하는 방식으로 진행하겠다고 하셨다. 여기까지 코딩해주고, 카메라 권한 허용 작업을 위해 manifest 도 다음의 권한 허용 코드 3줄도 추가를 해주었다. 그 다음 Gradle Script의 build.gradle 을 열어준다. implementation 'gun0912.ted:tedpermission:2.0.0' 를 한 줄 쳐주고 우측 상단의 sync now를 클릭해서 다운로드를 받는다. sync한 거를 활용하기 위해 다시 메인 엑티비티로 가서 다음과 같이 입력해주었다.//권한체크 TedPermission.with(g..","author":{"@type":"Person","name":"찌딴","logo":null},"image":{"@type":"ImageObject","url":"https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FbrzkDR%2FbtqGC7sqG1d%2FIpcHb8ZsvvQele3C039VFk%2Fimg.png","width":"800px","height":"800px"},"datePublished":"20200818T00:37:55","dateModified":"20200827T18:01:58","publisher":{"@type":"Organization","name":"TISTORY","logo":{"@type":"ImageObject","url":"https://t1.daumcdn.net/tistory_admin/static/images/openGraph/opengraph.png","width":"800px","height":"800px"}}}
+</script>
+<!-- END STRUCTURED_DATA -->
+<script type="text/javascript" src="https://tistory1.daumcdn.net/tistory_admin/userblog/userblog-7ceb32d78c3e1d773e0eeb855d3f1b4a5882f3e8/static/script/common.js"></script>
+
+                </head>
+
+                                <body id="tt-body-page">
+                
+                
+
+<div id="wrap">
+	<div id="sidebar">
+		<div class="blank"></div>
+		<h1><a href="https://zzimo.tistory.com/">찌모</a></h1>
+		
+			<div class="widget category"> <!-- Category -->
+				<ul class="tt_category"><li class=""><a href="/category" class="link_tit"> 분류 전체보기 <span class="c_cnt">(33)</span> </a>
+  <ul class="category_list"><li class=""><a href="/category/IT%20%EC%9D%B4%EB%AA%A8%EC%A0%80%EB%AA%A8" class="link_item"> IT 이모저모 <span class="c_cnt">(0)</span> </a></li>
+<li class=""><a href="/category/%ED%94%84%EB%B0%8D%ED%94%84%EB%B0%8D" class="link_item"> 프밍프밍 <span class="c_cnt">(3)</span> </a>
+  <ul class="sub_category_list"><li class=""><a href="/category/%ED%94%84%EB%B0%8D%ED%94%84%EB%B0%8D/python%20%ED%8C%8C%EC%9D%B4%EC%8D%AC" class="link_sub_item"> python 파이썬 <span class="c_cnt">(2)</span> </a></li>
+<li class=""><a href="/category/%ED%94%84%EB%B0%8D%ED%94%84%EB%B0%8D/C%EC%96%B8%EC%96%B4" class="link_sub_item"> C언어 <span class="c_cnt">(1)</span> </a></li>
+<li class=""><a href="/category/%ED%94%84%EB%B0%8D%ED%94%84%EB%B0%8D/%EC%9E%90%EB%B0%94" class="link_sub_item"> 자바 <span class="c_cnt">(0)</span> </a></li>
+</ul>
+</li>
+<li class=""><a href="/category/%EC%9E%90%EA%B2%A9%EC%A6%9D%EB%8F%84%EC%9E%A5%EA%B9%A8%EA%B8%B0" class="link_item"> 자격증도장깨기 <span class="c_cnt">(5)</span> </a>
+  <ul class="sub_category_list"><li class=""><a href="/category/%EC%9E%90%EA%B2%A9%EC%A6%9D%EB%8F%84%EC%9E%A5%EA%B9%A8%EA%B8%B0/%EC%A0%95%EB%B3%B4%EC%B2%98%EB%A6%AC%EA%B8%B0%EC%82%AC" class="link_sub_item"> 정보처리기사 <span class="c_cnt">(4)</span> </a></li>
+<li class=""><a href="/category/%EC%9E%90%EA%B2%A9%EC%A6%9D%EB%8F%84%EC%9E%A5%EA%B9%A8%EA%B8%B0/%EB%A6%AC%EB%88%85%EC%8A%A4%EB%A7%88%EC%8A%A4%ED%84%B0%202%EA%B8%89%20%EC%8B%A4%EA%B8%B0" class="link_sub_item"> 리눅스마스터 2급 실기 <span class="c_cnt">(0)</span> </a></li>
+<li class=""><a href="/category/%EC%9E%90%EA%B2%A9%EC%A6%9D%EB%8F%84%EC%9E%A5%EA%B9%A8%EA%B8%B0/%EC%A0%95%EB%B3%B4%EB%B3%B4%EC%95%88%EA%B8%B0%EC%82%AC" class="link_sub_item"> 정보보안기사 <span class="c_cnt">(1)</span> </a></li>
+</ul>
+</li>
+<li class=""><a href="/category/2020-2%20swu" class="link_item"> 2020-2 swu <span class="c_cnt">(0)</span> </a>
+  <ul class="sub_category_list"><li class=""><a href="/category/2020-2%20swu/%EC%8B%9C%EC%8A%A4%ED%85%9C%EB%B3%B4%EC%95%88%EA%B3%BC%EC%9A%B4%EC%98%81%EC%8B%A4%EC%8A%B5" class="link_sub_item"> 시스템보안과운영실습 <span class="c_cnt">(0)</span> </a></li>
+<li class=""><a href="/category/2020-2%20swu/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC%EB%B3%B4%EC%95%88%EA%B3%BC%EC%8B%A4%EC%8A%B5" class="link_sub_item"> 네트워크보안과실습 <span class="c_cnt">(0)</span> </a></li>
+<li class=""><a href="/category/2020-2%20swu/%EC%BB%A4%EB%84%A5%ED%8B%B0%EB%93%9C%EA%B8%B0%EC%88%A0%EA%B3%BC%EA%B8%B0%EC%97%85%EB%B3%B4%EC%95%88" class="link_sub_item"> 커넥티드기술과기업보안 <span class="c_cnt">(0)</span> </a></li>
+<li class=""><a href="/category/2020-2%20swu/%EB%B3%B4%EC%95%88%EC%82%B0%EC%97%85%EB%B9%84%EC%A6%88%EB%8B%88%EC%8A%A4%EB%A1%A0" class="link_sub_item"> 보안산업비즈니스론 <span class="c_cnt">(0)</span> </a></li>
+<li class=""><a href="/category/2020-2%20swu/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5%EA%B3%BC%EC%A0%95%EB%B3%B4%EB%B3%B4%ED%98%B8" class="link_sub_item"> 인공지능과정보보호 <span class="c_cnt">(0)</span> </a></li>
+<li class=""><a href="/category/2020-2%20swu/%EB%B8%94%EB%A1%9D%EC%B2%B4%EC%9D%B8%EA%B3%BC%EC%A0%95%EB%B3%B4%EB%B3%B4%ED%98%B8" class="link_sub_item"> 블록체인과정보보호 <span class="c_cnt">(0)</span> </a></li>
+</ul>
+</li>
+<li class=""><a href="/category/%EC%8B%A4%EB%A0%A5%EC%9E%88%EB%8A%94%20%EA%B0%9C%EB%B0%9C%EC%9E%90%20%EB%90%98%EA%B8%B0%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%21%21" class="link_item"> 실력있는 개발자 되기 프로젝트!! <span class="c_cnt">(21)</span> </a>
+  <ul class="sub_category_list"><li class=""><a href="/category/%EC%8B%A4%EB%A0%A5%EC%9E%88%EB%8A%94%20%EA%B0%9C%EB%B0%9C%EC%9E%90%20%EB%90%98%EA%B8%B0%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%21%21/iOS" class="link_sub_item"> iOS <span class="c_cnt">(4)</span> </a></li>
+<li class=""><a href="/category/%EC%8B%A4%EB%A0%A5%EC%9E%88%EB%8A%94%20%EA%B0%9C%EB%B0%9C%EC%9E%90%20%EB%90%98%EA%B8%B0%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%21%21/Android" class="link_sub_item"> Android <span class="c_cnt">(12)</span> </a></li>
+<li class=""><a href="/category/%EC%8B%A4%EB%A0%A5%EC%9E%88%EB%8A%94%20%EA%B0%9C%EB%B0%9C%EC%9E%90%20%EB%90%98%EA%B8%B0%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%21%21/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98" class="link_sub_item"> 자료구조알고리즘 <span class="c_cnt">(2)</span> </a></li>
+<li class=""><a href="/category/%EC%8B%A4%EB%A0%A5%EC%9E%88%EB%8A%94%20%EA%B0%9C%EB%B0%9C%EC%9E%90%20%EB%90%98%EA%B8%B0%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%21%21/%EC%BC%80%EC%9D%B4%EC%89%B4%EB%93%9C%EC%A3%BC%EB%8B%88%EC%96%B4" class="link_sub_item"> 케이쉴드주니어 <span class="c_cnt">(3)</span> </a></li>
+<li class=""><a href="/category/%EC%8B%A4%EB%A0%A5%EC%9E%88%EB%8A%94%20%EA%B0%9C%EB%B0%9C%EC%9E%90%20%EB%90%98%EA%B8%B0%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%21%21/%EC%95%84%EB%91%90%EC%9D%B4%EB%85%B8" class="link_sub_item"> 아두이노 <span class="c_cnt">(0)</span> </a></li>
+<li class=""><a href="/category/%EC%8B%A4%EB%A0%A5%EC%9E%88%EB%8A%94%20%EA%B0%9C%EB%B0%9C%EC%9E%90%20%EB%90%98%EA%B8%B0%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%21%21/PBL" class="link_sub_item"> PBL <span class="c_cnt">(0)</span> </a></li>
+<li class=""><a href="/category/%EC%8B%A4%EB%A0%A5%EC%9E%88%EB%8A%94%20%EA%B0%9C%EB%B0%9C%EC%9E%90%20%EB%90%98%EA%B8%B0%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%21%21/%EB%B0%B1%EC%A4%80%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98" class="link_sub_item"> 백준알고리즘 <span class="c_cnt">(0)</span> </a></li>
+<li class=""><a href="/category/%EC%8B%A4%EB%A0%A5%EC%9E%88%EB%8A%94%20%EA%B0%9C%EB%B0%9C%EC%9E%90%20%EB%90%98%EA%B8%B0%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%21%21/%EC%9A%B4%EC%98%81%EC%B2%B4%EC%A0%9C" class="link_sub_item"> 운영체제 <span class="c_cnt">(0)</span> </a></li>
+<li class=""><a href="/category/%EC%8B%A4%EB%A0%A5%EC%9E%88%EB%8A%94%20%EA%B0%9C%EB%B0%9C%EC%9E%90%20%EB%90%98%EA%B8%B0%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%21%21/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC" class="link_sub_item"> 네트워크 <span class="c_cnt">(0)</span> </a></li>
+<li class=""><a href="/category/%EC%8B%A4%EB%A0%A5%EC%9E%88%EB%8A%94%20%EA%B0%9C%EB%B0%9C%EC%9E%90%20%EB%90%98%EA%B8%B0%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%21%21/%EC%BB%B4%ED%93%A8%ED%84%B0%EA%B5%AC%EC%A1%B0" class="link_sub_item"> 컴퓨터구조 <span class="c_cnt">(0)</span> </a></li>
+</ul>
+</li>
+<li class=""><a href="/category/%EB%AA%B8%EC%A7%B1%EB%90%98%EC%9E%90%21" class="link_item"> 몸짱되자! <span class="c_cnt">(2)</span> </a>
+  <ul class="sub_category_list"><li class=""><a href="/category/%EB%AA%B8%EC%A7%B1%EB%90%98%EC%9E%90%21/%EC%9A%B4%EB%8F%99%20%26%26%20%EC%8B%9D%EB%8B%A8" class="link_sub_item"> 운동 &amp;&amp; 식단 <span class="c_cnt">(2)</span> </a></li>
+</ul>
+</li>
+<li class=""><a href="/category/%EA%B5%90%ED%99%98%ED%95%99%EC%83%9D" class="link_item"> 교환학생 <span class="c_cnt">(2)</span> </a></li>
+<li class=""><a href="/category/%EB%AF%B8%EB%8B%88%EC%9D%B8%ED%84%B4" class="link_item"> 미니인턴 <span class="c_cnt">(0)</span> </a></li>
+</ul>
+</li>
+</ul>
+
+			</div>
+			
+			<div class="widget"> <!-- Blog Menu -->
+				<ul>
+  <li class="t_menu_home first"><a href="/" target="">홈</a></li>
+  <li class="t_menu_tag"><a href="/tag" target="">태그</a></li>
+  <li class="t_menu_guestbook last"><a href="/guestbook" target="">방명록</a></li>
+</ul>
+			</div>
+			 <!-- Notice -->
+			
+			<div class="widget">
+				<ul>
+					
+				</ul>
+			</div>
+			
+			
+			<div class="widget"> <!-- Recent Comments -->
+				<ul id="recentComments">
+					<li><a href="/23#comment16786459" title="하루히즘〃2021">조언 감사합니다!</a></li><li><a href="/23#comment16785945" title="찌딴〃2021">저는 공모전 나갔던 거 인턴경험있던거를 썼어요! 그치만 다른분들 보니 경⋯</a></li><li><a href="/23#comment16781782" title="하루히즘〃2021">안녕하세요? 이번에 저도 6기에 지원하려고 합니다! 혹시 서류에 어떤 내⋯</a></li><li><a href="/74#comment16510385" title="EUNIB〃2020">멋지다!!</a></li>
+				</ul>
+			</div>
+			 <!-- Links -->
+			<div class="widget">
+				<ul>
+					
+				</ul>
+			</div>
+			 <!-- Counter -->
+			<div class="widget counter text-center">
+				<span class="yesterday">48</span> /
+				<span class="today">19</span> /
+				<span class="total">12,146</span>
+			</div>
+			 <!-- Search -->
+			<div class="widget search text-center">
+				
+					<label for="search" class="screen_out">블로그 내 검색</label>
+					<input id="search" class="search" placeholder="press enter to search…" type="text" name="search" value="" onkeypress="if (event.keyCode == 13) { try {
+    window.location.href = '/search' + '/' + looseURIEncode(document.getElementsByName('search')[0].value);
+    document.getElementsByName('search')[0].value = '';
+    return false;
+} catch (e) {} }" />
+				
+			</div>
+			
+		<div class="blank"></div>
+	</div>
+
+	<div id="content">
+		<div id="content-inner">
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			             
+                 
+<div id="head">
+	<h2><a href="/84">#11 안드로이드 앱만들기/카메라</a></h2>
+	<div class="date">2020. 8. 18. 00:37</div>
+</div>
+
+<div id="body" class="entry">
+	<div class="tag_label">
+	
+	</div>
+
+	<div class="article">
+	            <!-- Revenue - START -->
+
+<!-- Revenue - END -->
+
+            <div class="contents_style"><p data-ke-size="size16" style="text-align: left;">이번 시간에는 카메라 연동에 대해서 배워보자</p><p data-ke-size="size16" style="text-align: left;">&nbsp;</p><p data-ke-size="size16" style="text-align: left;">늘 해왔던 것처럼 아래와 같이 레이아웃을 기본 세팅을 해주었다.</p><p data-ke-size="size16" style="text-align: left;">&nbsp;</p><figure class="imageblock alignCenter" data-image-src="https://k.kakaocdn.net/dn/brzkDR/btqGC7sqG1d/IpcHb8ZsvvQele3C039VFk/img.png" data-origin-width="0.0" data-origin-height="0.0" data-ke-mobilestyle="widthContent"><span data-url="https://k.kakaocdn.net/dn/brzkDR/btqGC7sqG1d/IpcHb8ZsvvQele3C039VFk/img.png" data-lightbox="lightbox"><img src="https://k.kakaocdn.net/dn/brzkDR/btqGC7sqG1d/IpcHb8ZsvvQele3C039VFk/img.png" srcset="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FbrzkDR%2FbtqGC7sqG1d%2FIpcHb8ZsvvQele3C039VFk%2Fimg.png" data-image-src="https://k.kakaocdn.net/dn/brzkDR/btqGC7sqG1d/IpcHb8ZsvvQele3C039VFk/img.png" data-origin-width="0.0" data-origin-height="0.0" data-ke-mobilestyle="widthContent" onerror="this.onerror=null; this.src='//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png'; this.srcset='//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png';"/></span></figure>
+<p data-ke-size="size16" style="text-align: left;">&nbsp;</p><p data-ke-size="size16" style="text-align: left;">&nbsp;</p><p data-ke-size="size16" style="text-align: left;">&nbsp;</p><p data-ke-size="size16" style="text-align: left;">그 다음 자바 파일 수정을 해주었다.</p><p data-ke-size="size16" style="text-align: left;">이번 수업시간에는 코드를 일단 다 치고 설명하는 방식으로 진행하겠다고 하셨다.</p><p data-ke-size="size16" style="text-align: left;">&nbsp;</p><figure class="imageblock alignCenter" data-image-src="https://k.kakaocdn.net/dn/b6Yi5b/btqGHMHlycj/DfIywtKies1xoqsrQnK8EK/img.png" data-origin-width="0.0" data-origin-height="0.0" data-ke-mobilestyle="widthContent"><span data-url="https://k.kakaocdn.net/dn/b6Yi5b/btqGHMHlycj/DfIywtKies1xoqsrQnK8EK/img.png" data-lightbox="lightbox"><img src="https://k.kakaocdn.net/dn/b6Yi5b/btqGHMHlycj/DfIywtKies1xoqsrQnK8EK/img.png" srcset="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2Fb6Yi5b%2FbtqGHMHlycj%2FDfIywtKies1xoqsrQnK8EK%2Fimg.png" data-image-src="https://k.kakaocdn.net/dn/b6Yi5b/btqGHMHlycj/DfIywtKies1xoqsrQnK8EK/img.png" data-origin-width="0.0" data-origin-height="0.0" data-ke-mobilestyle="widthContent" onerror="this.onerror=null; this.src='//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png'; this.srcset='//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png';"/></span></figure>
+<figure class="imageblock alignCenter" data-image-src="https://k.kakaocdn.net/dn/bqECl5/btqGIqKBSLi/Ib8U4sim4FjjbkFm3I8DHk/img.png" data-origin-width="0.0" data-origin-height="0.0" data-ke-mobilestyle="widthContent"><span data-url="https://k.kakaocdn.net/dn/bqECl5/btqGIqKBSLi/Ib8U4sim4FjjbkFm3I8DHk/img.png" data-lightbox="lightbox"><img src="https://k.kakaocdn.net/dn/bqECl5/btqGIqKBSLi/Ib8U4sim4FjjbkFm3I8DHk/img.png" srcset="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FbqECl5%2FbtqGIqKBSLi%2FIb8U4sim4FjjbkFm3I8DHk%2Fimg.png" data-image-src="https://k.kakaocdn.net/dn/bqECl5/btqGIqKBSLi/Ib8U4sim4FjjbkFm3I8DHk/img.png" data-origin-width="0.0" data-origin-height="0.0" data-ke-mobilestyle="widthContent" onerror="this.onerror=null; this.src='//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png'; this.srcset='//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png';"/></span></figure>
+<p data-ke-size="size16" style="text-align: left;">&nbsp;</p><p data-ke-size="size16" style="text-align: left;">&nbsp;</p><p data-ke-size="size16" style="text-align: left;">&nbsp;</p><p data-ke-size="size16" style="text-align: left;">&nbsp;</p><p data-ke-size="size16" style="text-align: left;">여기까지 코딩해주고, 카메라 권한 허용 작업을 위해 manifest 도 다음의 권한 허용 코드 3줄도 추가를 해주었다.</p><p data-ke-size="size16" style="text-align: left;">&nbsp;</p><figure class="imageblock alignCenter" data-image-src="https://k.kakaocdn.net/dn/1L3qm/btqGIh8cbbk/4MY64KZZ18DB9riznB8mb0/img.png" data-origin-width="0.0" data-origin-height="0.0" data-ke-mobilestyle="widthContent"><span data-url="https://k.kakaocdn.net/dn/1L3qm/btqGIh8cbbk/4MY64KZZ18DB9riznB8mb0/img.png" data-lightbox="lightbox"><img src="https://k.kakaocdn.net/dn/1L3qm/btqGIh8cbbk/4MY64KZZ18DB9riznB8mb0/img.png" srcset="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2F1L3qm%2FbtqGIh8cbbk%2F4MY64KZZ18DB9riznB8mb0%2Fimg.png" data-image-src="https://k.kakaocdn.net/dn/1L3qm/btqGIh8cbbk/4MY64KZZ18DB9riznB8mb0/img.png" data-origin-width="0.0" data-origin-height="0.0" data-ke-mobilestyle="widthContent" onerror="this.onerror=null; this.src='//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png'; this.srcset='//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png';"/></span></figure>
+<p data-ke-size="size16" style="text-align: left;">&nbsp;</p><p data-ke-size="size16" style="text-align: left;">&nbsp;</p><p data-ke-size="size16" style="text-align: left;">&nbsp;</p><p data-ke-size="size16" style="text-align: left;">그 다음 Gradle Script의 build.gradle 을 열어준다.</p><p data-ke-size="size16" style="text-align: left;">&nbsp;</p><figure class="imageblock alignCenter" data-image-src="https://k.kakaocdn.net/dn/bIOhQF/btqGJHrMQTb/JtOAfYvkL6pbY5kyLHxNF0/img.png" data-origin-width="0.0" data-origin-height="0.0" data-ke-mobilestyle="widthContent"><span data-url="https://k.kakaocdn.net/dn/bIOhQF/btqGJHrMQTb/JtOAfYvkL6pbY5kyLHxNF0/img.png" data-lightbox="lightbox"><img src="https://k.kakaocdn.net/dn/bIOhQF/btqGJHrMQTb/JtOAfYvkL6pbY5kyLHxNF0/img.png" srcset="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FbIOhQF%2FbtqGJHrMQTb%2FJtOAfYvkL6pbY5kyLHxNF0%2Fimg.png" data-image-src="https://k.kakaocdn.net/dn/bIOhQF/btqGJHrMQTb/JtOAfYvkL6pbY5kyLHxNF0/img.png" data-origin-width="0.0" data-origin-height="0.0" data-ke-mobilestyle="widthContent" onerror="this.onerror=null; this.src='//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png'; this.srcset='//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png';"/></span></figure>
+<p data-ke-size="size16" style="text-align: left;">&nbsp;</p><p data-ke-size="size16" style="text-align: left;">&nbsp;</p><p data-ke-size="size16" style="text-align: left;">&nbsp;</p><p data-ke-size="size16" style="text-align: left;">implementation 'gun0912.ted:tedpermission:2.0.0'&nbsp;를 한 줄 쳐주고 우측 상단의 sync now를 클릭해서 다운로드를 받는다.</p><p data-ke-size="size16" style="text-align: left;">&nbsp;</p><figure class="imageblock alignCenter" data-image-src="https://k.kakaocdn.net/dn/D2024/btqGK4mK0jE/dwSYK2qxWXYiBsPZKEcVD0/img.png" data-origin-width="0.0" data-origin-height="0.0" data-ke-mobilestyle="widthContent"><span data-url="https://k.kakaocdn.net/dn/D2024/btqGK4mK0jE/dwSYK2qxWXYiBsPZKEcVD0/img.png" data-lightbox="lightbox"><img src="https://k.kakaocdn.net/dn/D2024/btqGK4mK0jE/dwSYK2qxWXYiBsPZKEcVD0/img.png" srcset="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FD2024%2FbtqGK4mK0jE%2FdwSYK2qxWXYiBsPZKEcVD0%2Fimg.png" data-image-src="https://k.kakaocdn.net/dn/D2024/btqGK4mK0jE/dwSYK2qxWXYiBsPZKEcVD0/img.png" data-origin-width="0.0" data-origin-height="0.0" data-ke-mobilestyle="widthContent" onerror="this.onerror=null; this.src='//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png'; this.srcset='//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png';"/></span></figure>
+<p data-ke-size="size16" style="text-align: left;">&nbsp;</p><p data-ke-size="size16" style="text-align: left;">&nbsp;</p><p data-ke-size="size16" style="text-align: left;">&nbsp;</p><p data-ke-size="size16" style="text-align: left;">sync한 거를 활용하기 위해 다시 메인 엑티비티로 가서 다음과 같이 입력해주었다.</p><p data-ke-size="size16" style="text-align: left;">//권한체크<br>TedPermission.with(getApplicationContext())<br>.setPermissionListener(permissionListener)<br>.setRationalMessage("카메라권한이 필요합니다.")<br>.setDenialMessage("거부하셨습니다.")<br>.setPermissions(Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.CAMERA)<br>.chech();</p><p data-ke-size="size16" style="text-align: left;">&nbsp;</p><figure class="imageblock alignCenter" data-image-src="https://k.kakaocdn.net/dn/EU8xg/btqGJGsTV5t/V23BaZOasGKFvElMbZRT3k/img.png" data-origin-width="0.0" data-origin-height="0.0" data-ke-mobilestyle="widthContent"><span data-url="https://k.kakaocdn.net/dn/EU8xg/btqGJGsTV5t/V23BaZOasGKFvElMbZRT3k/img.png" data-lightbox="lightbox"><img src="https://k.kakaocdn.net/dn/EU8xg/btqGJGsTV5t/V23BaZOasGKFvElMbZRT3k/img.png" srcset="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FEU8xg%2FbtqGJGsTV5t%2FV23BaZOasGKFvElMbZRT3k%2Fimg.png" data-image-src="https://k.kakaocdn.net/dn/EU8xg/btqGJGsTV5t/V23BaZOasGKFvElMbZRT3k/img.png" data-origin-width="0.0" data-origin-height="0.0" data-ke-mobilestyle="widthContent" onerror="this.onerror=null; this.src='//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png'; this.srcset='//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png';"/></span></figure>
+<p data-ke-size="size16" style="text-align: left;">&nbsp;</p><p data-ke-size="size16" style="text-align: left;">&nbsp;</p><p data-ke-size="size16" style="text-align: left;">&nbsp;</p><p data-ke-size="size16" style="text-align: left;">&nbsp;</p><p data-ke-size="size16" style="text-align: left;">아직 permissionListener가 구현되지 않아서 빨간줄이 나타난다. 그래서 이를 구현해주기 위해 위 코드의 아랫줄에 아래와 같이 입력했다.</p><p data-ke-size="size16" style="text-align: left;">&nbsp;</p><figure class="imageblock alignCenter" data-image-src="https://k.kakaocdn.net/dn/bxlgve/btqGDQc84qw/z6W2Sv5P67bvSd8G9dkRH0/img.png" data-origin-width="0.0" data-origin-height="0.0" data-ke-mobilestyle="widthContent"><span data-url="https://k.kakaocdn.net/dn/bxlgve/btqGDQc84qw/z6W2Sv5P67bvSd8G9dkRH0/img.png" data-lightbox="lightbox"><img src="https://k.kakaocdn.net/dn/bxlgve/btqGDQc84qw/z6W2Sv5P67bvSd8G9dkRH0/img.png" srcset="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2Fbxlgve%2FbtqGDQc84qw%2Fz6W2Sv5P67bvSd8G9dkRH0%2Fimg.png" data-image-src="https://k.kakaocdn.net/dn/bxlgve/btqGDQc84qw/z6W2Sv5P67bvSd8G9dkRH0/img.png" data-origin-width="0.0" data-origin-height="0.0" data-ke-mobilestyle="widthContent" onerror="this.onerror=null; this.src='//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png'; this.srcset='//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png';"/></span></figure>
+<p data-ke-size="size16" style="text-align: left;">&nbsp;</p><p data-ke-size="size16" style="text-align: left;">&nbsp;</p><p data-ke-size="size16" style="text-align: left;">&nbsp;</p><p data-ke-size="size16" style="text-align: left;">그리고 Permission 위에다가 이거를 쳤다.</p><p data-ke-size="size16" style="text-align: left;">사실 왜 하는지는 잘 모르겠는데, 설명은 마지막에 쭉 해준대서 그냥 들었다.</p><p data-ke-size="size16" style="text-align: left;">&nbsp;</p><figure class="imageblock alignCenter" data-image-src="https://k.kakaocdn.net/dn/nvqiL/btqGJu0vxct/ysUIGNLdKiDQtx5bFAABNK/img.png" data-origin-width="0.0" data-origin-height="0.0" data-ke-mobilestyle="widthContent"><span data-url="https://k.kakaocdn.net/dn/nvqiL/btqGJu0vxct/ysUIGNLdKiDQtx5bFAABNK/img.png" data-lightbox="lightbox"><img src="https://k.kakaocdn.net/dn/nvqiL/btqGJu0vxct/ysUIGNLdKiDQtx5bFAABNK/img.png" srcset="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FnvqiL%2FbtqGJu0vxct%2FysUIGNLdKiDQtx5bFAABNK%2Fimg.png" data-image-src="https://k.kakaocdn.net/dn/nvqiL/btqGJu0vxct/ysUIGNLdKiDQtx5bFAABNK/img.png" data-origin-width="0.0" data-origin-height="0.0" data-ke-mobilestyle="widthContent" onerror="this.onerror=null; this.src='//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png'; this.srcset='//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png';"/></span></figure>
+<p data-ke-size="size16" style="text-align: left;">&nbsp;</p><p data-ke-size="size16" style="text-align: left;">&nbsp;</p><p data-ke-size="size16" style="text-align: left;">&nbsp;</p><p data-ke-size="size16" style="text-align: left;">&nbsp;</p><p data-ke-size="size16" style="text-align: left;">이것도 쳐줬다.</p><p data-ke-size="size16" style="text-align: left;">&nbsp;</p><figure class="imageblock alignCenter" data-image-src="https://k.kakaocdn.net/dn/ciOfwF/btqGJvZRDhP/LEEktZQ1CTfDaNsrKTgPKK/img.png" data-origin-width="0.0" data-origin-height="0.0" data-ke-mobilestyle="widthContent"><span data-url="https://k.kakaocdn.net/dn/ciOfwF/btqGJvZRDhP/LEEktZQ1CTfDaNsrKTgPKK/img.png" data-lightbox="lightbox"><img src="https://k.kakaocdn.net/dn/ciOfwF/btqGJvZRDhP/LEEktZQ1CTfDaNsrKTgPKK/img.png" srcset="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FciOfwF%2FbtqGJvZRDhP%2FLEEktZQ1CTfDaNsrKTgPKK%2Fimg.png" data-image-src="https://k.kakaocdn.net/dn/ciOfwF/btqGJvZRDhP/LEEktZQ1CTfDaNsrKTgPKK/img.png" data-origin-width="0.0" data-origin-height="0.0" data-ke-mobilestyle="widthContent" onerror="this.onerror=null; this.src='//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png'; this.srcset='//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png';"/></span></figure>
+<p data-ke-size="size16" style="text-align: left;">&nbsp;</p><p data-ke-size="size16" style="text-align: left;">&nbsp;</p><p data-ke-size="size16" style="text-align: left;">&nbsp;</p><p data-ke-size="size16" style="text-align: left;">이제 xml파일을 하나 새로 만들어 주었다.</p><p data-ke-size="size16" style="text-align: left;">&nbsp;</p><figure class="imageblock alignCenter" data-image-src="https://k.kakaocdn.net/dn/dO62fd/btqGHpTClym/DPOYK318lG9qwckFdR5gB0/img.png" data-origin-width="0.0" data-origin-height="0.0" data-ke-mobilestyle="widthContent"><span data-url="https://k.kakaocdn.net/dn/dO62fd/btqGHpTClym/DPOYK318lG9qwckFdR5gB0/img.png" data-lightbox="lightbox"><img src="https://k.kakaocdn.net/dn/dO62fd/btqGHpTClym/DPOYK318lG9qwckFdR5gB0/img.png" srcset="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FdO62fd%2FbtqGHpTClym%2FDPOYK318lG9qwckFdR5gB0%2Fimg.png" data-image-src="https://k.kakaocdn.net/dn/dO62fd/btqGHpTClym/DPOYK318lG9qwckFdR5gB0/img.png" data-origin-width="0.0" data-origin-height="0.0" data-ke-mobilestyle="widthContent" onerror="this.onerror=null; this.src='//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png'; this.srcset='//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png';"/></span></figure>
+<p data-ke-size="size16" style="text-align: left;">&nbsp;</p><p data-ke-size="size16" style="text-align: left;">&nbsp;</p><p data-ke-size="size16" style="text-align: left;">&nbsp;</p><p data-ke-size="size16" style="text-align: left;">xml에다가는 다음과 같이 입력을 해준다.</p><p data-ke-size="size16" style="text-align: left;">&nbsp;</p><figure class="imageblock alignCenter" data-image-src="https://k.kakaocdn.net/dn/yb88s/btqGQdjPYMU/B4gCm0d2IgO8mei5Hai3A0/img.png" data-origin-width="0.0" data-origin-height="0.0" data-ke-mobilestyle="widthContent"><span data-url="https://k.kakaocdn.net/dn/yb88s/btqGQdjPYMU/B4gCm0d2IgO8mei5Hai3A0/img.png" data-lightbox="lightbox"><img src="https://k.kakaocdn.net/dn/yb88s/btqGQdjPYMU/B4gCm0d2IgO8mei5Hai3A0/img.png" srcset="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2Fyb88s%2FbtqGQdjPYMU%2FB4gCm0d2IgO8mei5Hai3A0%2Fimg.png" data-image-src="https://k.kakaocdn.net/dn/yb88s/btqGQdjPYMU/B4gCm0d2IgO8mei5Hai3A0/img.png" data-origin-width="0.0" data-origin-height="0.0" data-ke-mobilestyle="widthContent" onerror="this.onerror=null; this.src='//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png'; this.srcset='//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png';"/></span></figure>
+<p data-ke-size="size16" style="text-align: left;">&nbsp;</p><p data-ke-size="size16" style="text-align: left;">&nbsp;</p><p data-ke-size="size16" style="text-align: left;">&nbsp;</p><p data-ke-size="size16" style="text-align: left;">그리고 AndroidManifest.xml에다가는 이렇게 코드를 넣어주었다.</p><p data-ke-size="size16" style="text-align: left;">&nbsp;</p><figure class="imageblock alignCenter" data-image-src="https://k.kakaocdn.net/dn/TC3fB/btqGIgPMbz6/DJG4xhlF3twDlDmArQdXuk/img.png" data-origin-width="0.0" data-origin-height="0.0" data-ke-mobilestyle="widthContent"><span data-url="https://k.kakaocdn.net/dn/TC3fB/btqGIgPMbz6/DJG4xhlF3twDlDmArQdXuk/img.png" data-lightbox="lightbox"><img src="https://k.kakaocdn.net/dn/TC3fB/btqGIgPMbz6/DJG4xhlF3twDlDmArQdXuk/img.png" srcset="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FTC3fB%2FbtqGIgPMbz6%2FDJG4xhlF3twDlDmArQdXuk%2Fimg.png" data-image-src="https://k.kakaocdn.net/dn/TC3fB/btqGIgPMbz6/DJG4xhlF3twDlDmArQdXuk/img.png" data-origin-width="0.0" data-origin-height="0.0" data-ke-mobilestyle="widthContent" onerror="this.onerror=null; this.src='//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png'; this.srcset='//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png';"/></span></figure>
+<p data-ke-size="size16" style="text-align: left;">&nbsp;</p><p data-ke-size="size16" style="text-align: left;">&nbsp;</p><p data-ke-size="size16" style="text-align: left;">&nbsp;</p><p data-ke-size="size16" style="text-align: left;">사실 이거를 왜 해야만 하는지는 정확히 이해하기는 어려웠다.</p><p data-ke-size="size16" style="text-align: left;">어쩄거나 이 코드를 사용함으로 우리는 화면 가로세로 보기 조정, 카메라 권한 조정&nbsp;</p><p data-ke-size="size16" style="text-align: left;">&nbsp;</p><p data-ke-size="size16" style="text-align: left;">&nbsp;</p><figure class="imageblock alignCenter" data-image-src="https://k.kakaocdn.net/dn/pxWa9/btqGQcytGnL/rIywKBMhJroSvokyuBeg7k/img.png" data-origin-width="0.0" data-origin-height="0.0" data-ke-mobilestyle="widthContent"><span data-url="https://k.kakaocdn.net/dn/pxWa9/btqGQcytGnL/rIywKBMhJroSvokyuBeg7k/img.png" data-lightbox="lightbox"><img src="https://k.kakaocdn.net/dn/pxWa9/btqGQcytGnL/rIywKBMhJroSvokyuBeg7k/img.png" srcset="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FpxWa9%2FbtqGQcytGnL%2FrIywKBMhJroSvokyuBeg7k%2Fimg.png" data-image-src="https://k.kakaocdn.net/dn/pxWa9/btqGQcytGnL/rIywKBMhJroSvokyuBeg7k/img.png" data-origin-width="0.0" data-origin-height="0.0" data-ke-mobilestyle="widthContent" onerror="this.onerror=null; this.src='//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png'; this.srcset='//t1.daumcdn.net/tistory_admin/static/images/no-image-v1.png';"/></span></figure>
+<p data-ke-size="size16" style="text-align: left;">&nbsp;</p><p data-ke-size="size16" style="text-align: left;">근데 문제는 실행이 안된다.</p><p data-ke-size="size16" style="text-align: left;">파일 경로가 잘못된걸까?</p><p data-ke-size="size16" style="text-align: left;">제대로 작성 다 했고 빌드 오류도 안뜨는데.....</p><p data-ke-size="size16" style="text-align: left;">일단 보류하고 내일 아침에 마저 수정해야겠다</p><p data-ke-size="size16" style="text-align: left;">&nbsp;</p></div>
+            <!-- Revenue - START -->
+
+<!-- Revenue - END -->
+
+                    <div class="container_postbtn #post_button_group">
+  <div class="postbtn_like"><script>window.ReactionButtonType = 'reaction';
+window.ReactionApiUrl = '//zzimo.tistory.com/reaction';
+window.ReactionReqBody = {
+    entryId: 84
+}</script>
+<div class="wrap_btn" id="reaction-84"></div>
+<script src="https://tistory1.daumcdn.net/tistory_admin/userblog/userblog-7ceb32d78c3e1d773e0eeb855d3f1b4a5882f3e8/static/script/reaction-button-container.min.js"></script><div class="wrap_btn wrap_btn_share"><button type="button" class="btn_post sns_btn btn_share" aria-expanded="false" data-thumbnail-url="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&amp;fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FbrzkDR%2FbtqGC7sqG1d%2FIpcHb8ZsvvQele3C039VFk%2Fimg.png" data-title="#11 안드로이드 앱만들기/카메라" data-description="이번 시간에는 카메라 연동에 대해서 배워보자 늘 해왔던 것처럼 아래와 같이 레이아웃을 기본 세팅을 해주었다. 그 다음 자바 파일 수정을 해주었다.이번 수업시간에는 코드를 일단 다 치고 설명하는 방식으로 진행하겠다고 하셨다. 여기까지 코딩해주고, 카메라 권한 허용 작업을 위해 manifest 도 다음의 권한 허용 코드 3줄도 추가를 해주었다. 그 다음 Gradle Script의 build.gradle 을 열어준다. implementation 'gun0912.ted:tedpermission:2.0.0' 를 한 줄 쳐주고 우측 상단의 sync now를 클릭해서 다운로드를 받는다. sync한 거를 활용하기 위해 다시 메인 엑티비티로 가서 다음과 같이 입력해주었다.//권한체크 TedPermission.with(g.." data-profile-image="https://tistory1.daumcdn.net/tistory/3193210/attach/9547c7b34d394c1cb5141272bd81f655" data-profile-name="찌딴" data-pc-url="https://zzimo.tistory.com/84" data-relative-pc-url="/84" data-blog-title="찌모"><span class="ico_postbtn ico_share">공유하기</span></button>
+  <div class="layer_post" id="tistorySnsLayer"></div>
+</div><div class="wrap_btn wrap_btn_etc" data-entry-id="84" data-entry-visibility="public" data-category-visibility="public"><button type="button" class="btn_post btn_etc2" aria-expanded="false"><span class="ico_postbtn ico_etc">게시글 관리</span></button>
+  <div class="layer_post" id="tistoryEtcLayer"></div>
+</div></div>
+<button type="button" class="btn_menu_toolbar btn_subscription  #subscribe" data-blog-id="3193210" data-url="https://zzimo.tistory.com/84" data-device="web_pc"><em class="txt_state">구독하기</em><strong class="txt_tool_id">찌모</strong><span class="img_common_tistory ico_check_type1"></span></button></div>
+
+                    <!-- PostListinCategory - START -->
+<div class="another_category another_category_color_gray">
+  <h4>'<a href="/category/%EC%8B%A4%EB%A0%A5%EC%9E%88%EB%8A%94%20%EA%B0%9C%EB%B0%9C%EC%9E%90%20%EB%90%98%EA%B8%B0%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%21%21">실력있는 개발자 되기 프로젝트!!</a> &gt; <a href="/category/Android">Android</a>' 카테고리의 다른 글</h4>
+  <table>
+    <tr>
+      <th><a href="/86">#12 안드로이드 앱 만들기/RecyclerView</a>&nbsp;&nbsp;<span>(0)</span></th>
+      <td>2020.09.03</td>
+    </tr>
+    <tr>
+      <th><a href="/83">#10 안드로이드 앱 만들기/Navigation Menu 커스텀</a>&nbsp;&nbsp;<span>(0)</span></th>
+      <td>2020.08.14</td>
+    </tr>
+    <tr>
+      <th><a href="/82">#9 안드로이드 앱 만들기/webView</a>&nbsp;&nbsp;<span>(0)</span></th>
+      <td>2020.08.12</td>
+    </tr>
+    <tr>
+      <th><a href="/81">#8 안드로이드 앱 만들기/sharedPreference</a>&nbsp;&nbsp;<span>(0)</span></th>
+      <td>2020.08.12</td>
+    </tr>
+    <tr>
+      <th><a href="/80">#7 안드로이드 앱 만들기/네비게이션 메뉴</a>&nbsp;&nbsp;<span>(0)</span></th>
+      <td>2020.08.12</td>
+    </tr>
+  </table>
+</div>
+
+<!-- PostListinCategory - END -->
+
+	</div>
+
+	
+
+	<div id="entry84Comment">
+	<div id="communicate">
+	          <form method="post" action="/comment/add/84" onsubmit="return false" style="margin: 0">
+              
+<div class="communicateWrite">
+
+	
+	<div class="name guest">
+		<label for="name">NAME</label>
+		<input id="name" type="text" name="name" value="" />
+	</div>
+	<div class="password guest">
+		<label for="password">PASSWORD</label>
+		<input id="password" type="password" maxlength="8" name="password" value="" />
+	</div>
+	<div class="homepage guest">
+		<label for="homepage">HOMEPAGE</label>
+		<input id="homepage" type="text" name="homepage" value="http://"/>
+	</div>
+	
+
+	<div class="textarea"><textarea name="comment" rows="10" cols="50"></textarea></div>
+	<div class="submit"><input type="submit" value="WRITE" onclick="addComment(this, 84); return false;" /></div>
+	<div class="secret">
+		<label for="secret">SECRET</label>
+		<input id="secret" type="checkbox" name="secret" />
+	</div>
+	<div class="clear"></div>
+</div>
+
+          </form>
+
+	
+		<div class="communicateList">
+		<ol>
+			            
+
+            
+		</ol>
+		</div>
+	
+	</div>
+	</div>
+<script type="text/javascript">loadedComments[84]=true;
+findFragmentAndHighlight(84);</script>
+
+</div>
+
+                 
+             
+
+			
+
+			<div id="paging">
+			
+			</div>
+
+			
+			<div id="recent-post">
+				<h4><a href="/category">+ Recent posts</a></h4>
+				<ul>
+					
+					<li class="box">
+						<a href="/91" class="thumb">
+							<img src="https://img1.daumcdn.net/thumb/R750x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FclGUHw%2FbtqJoKAxFoc%2FafKXniRhMddnLTqdFaxKkk%2Fimg.png" onerror="this.src='https://tistory1.daumcdn.net/tistory/0/Square/images/blank2.png'" alt="post image" />
+						<span class="title">정보처리기사 실기 접수 정보처리기사 시험일정/시험대비계⋯</span>
+						</a>
+					</li>
+					
+					<li class="box">
+						<a href="/90" class="thumb">
+							<img src="https://img1.daumcdn.net/thumb/R750x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FdHXq2L%2FbtqJohriSm9%2Ft99oBZ7VSzSfY6VOBPzCtK%2Fimg.png" onerror="this.src='https://tistory1.daumcdn.net/tistory/0/Square/images/blank2.png'" alt="post image" />
+						<span class="title">정보보안기사 도전!! 정보보안기사 시험일정/시험공부계획</span>
+						</a>
+					</li>
+					
+					<li class="box">
+						<a href="/86" class="thumb">
+							<img src="https://img1.daumcdn.net/thumb/R750x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FbKC44t%2FbtqHra1RPGH%2F1F5NHiEPZjvSctjrjTqi00%2Fimg.png" onerror="this.src='https://tistory1.daumcdn.net/tistory/0/Square/images/blank2.png'" alt="post image" />
+						<span class="title">#12 안드로이드 앱 만들기/RecyclerView</span>
+						</a>
+					</li>
+					
+					<li class="box">
+						<a href="/84" class="thumb">
+							<img src="https://img1.daumcdn.net/thumb/R750x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FbrzkDR%2FbtqGC7sqG1d%2FIpcHb8ZsvvQele3C039VFk%2Fimg.png" onerror="this.src='https://tistory1.daumcdn.net/tistory/0/Square/images/blank2.png'" alt="post image" />
+						<span class="title">#11 안드로이드 앱만들기/카메라</span>
+						</a>
+					</li>
+					
+					<div class="clear"></div>
+				</ul>
+			</div>
+			
+
+			<div class="clear"></div>
+
+			<div id="foot">
+				<div class="powered">Powered by <a href="http://www.tistory.com/" target="_blank">Tistory</a>, Designed by <a href="http://wallel.com/" target="_blank">wallel</a></div>
+				<div class="social">
+					<a href="https://zzimo.tistory.com/rss" target="_blank">Rss Feed</a> and
+					<a href="https://www.twitter.com/" target="_blank">Twitter</a>,
+					<a href="https://www.facebook.com/" target="_blank">Facebook</a>,
+					<a href="https://www.youtube.com/" target="_blank">Youtube</a>,
+					<a href="https://plus.google.com/" target="_blank">Google+</a>
+				</div>
+			</div>
+		</div> <!-- content-inner close -->
+	</div> <!-- content close -->
+</div> <!-- wrap close -->
+
+
+<div id="sidebar-toggle"><i class="icon-reorder"></i></div>
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://tistory1.daumcdn.net/tistory/0/Square/images/common.js?_version_=1563972051"></script>
+<script src="https://tistory1.daumcdn.net/tistory/0/Square/images/jquery.mCustomScrollbar.concat.min.js?_version_=1563972051"></script>
+<script>
+$(document).ready(function () {
+	if ($('body').width() > "960") {
+		$("#sidebar").mCustomScrollbar({
+			theme: "dark-thin",
+			autoHideScrollbar: "true"
+		});
+	};
+});
+</script>
+<div class="#menubar menu_toolbar ">
+  <h2 class="screen_out">티스토리툴바</h2>
+</div>
+<div class="#menubar menu_toolbar "></div>
+<iframe id="editEntry" style="position:absolute;width:1px;height:1px;left:-100px;top:-100px" src="//zzimo.tistory.com/api"></iframe>
+
+                <!-- DragSearchHandler - START -->
+<script src="//search1.daumcdn.net/search/statics/common/js/g/search_dragselection.min.js"></script>
+
+<!-- DragSearchHandler - END -->
+
+                
+                <script>window.tiara = {"svcDomain":"user.tistory.com","section":"글뷰","trackPage":"글뷰_보기","page":"글뷰","key":"3193210-84","customProps":{"userId":"0","blogId":"3193210","entryId":"84","role":"guest","filterTarget":false,"trackPage":"글뷰_보기"},"entry":{"entryId":"84","categoryName":"실력있는 개발자 되기 프로젝트!!/Android","categoryId":"917776","author":"3950506","image":"kage@brzkDR/btqGC7sqG1d/IpcHb8ZsvvQele3C039VFk","plink":"/84","tags":[]},"kakaoAppKey":"3e6ddd834b023f24221217e370daed18","appUserId":"null"}</script>
+<script type="text/javascript" src="https://tistory1.daumcdn.net/tistory_admin/userblog/userblog-7ceb32d78c3e1d773e0eeb855d3f1b4a5882f3e8/static/script/tiara.min.js"></script>
+<script type="text/javascript">(function($) {
+    $(document).ready(function() {
+        lightbox.options.fadeDuration = 200;
+        lightbox.options.resizeDuration = 200;
+        lightbox.options.wrapAround = false;
+        lightbox.options.albumLabel = "%1 / %2";
+    })
+})(tjQuery);</script>
+<div style="{margin:0; padding:0; border:none; background:none; float:none; clear:none; z-index:0}"></div>
+<script type="text/javascript" src="https://tistory1.daumcdn.net/tistory_admin/userblog/userblog-7ceb32d78c3e1d773e0eeb855d3f1b4a5882f3e8/static/script/common.js"></script>
+<script type="text/javascript">window.roosevelt_params_queue = window.roosevelt_params_queue || [{channel_id: 'dk', channel_label: '{tistory}'}]</script>
+<script type="text/javascript" src="//t1.daumcdn.net/midas/rt/dk_bt/roosevelt_dk_bt.js" async="async"></script>
+<script type="text/javascript" src="https://tistory1.daumcdn.net/tistory_admin/userblog/userblog-7ceb32d78c3e1d773e0eeb855d3f1b4a5882f3e8/static/script/menubar.min.js"></script>
+<script>            (function (win, doc, src) {
+    win.Wpm = win.Wpm || function (name, param) {
+        win.Wpm.queue = win.Wpm.queue || [];
+        const { queue } = win.Wpm;
+        queue.push([name, param]);
+    };
+    const script = doc.createElement('script');
+    script.src = src;
+    script.async = 1;
+    const [elem] = doc.getElementsByTagName('script');
+    elem.parentNode.insertBefore(script, elem);
+})(window, document, 'https://t1.kakaocdn.net/malibu_prod/wpm.js');
+            const APP_KEY = 'd3cda7e82e6e4144bdc998b8e25f125d';
+            Wpm('appKey', APP_KEY);</script>
+
+                </body>
+</html>
